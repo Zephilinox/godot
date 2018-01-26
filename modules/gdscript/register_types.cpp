@@ -82,7 +82,10 @@ static void _editor_init() {
 void register_gdscript_types() {
 
 	ClassDB::register_class<GDScript>();
-	ClassDB::register_virtual_class<GDScriptFunctionState>();
+	ClassDB::register_virtual_class<GDFunctionObject>();
+	ClassDB::register_virtual_class<GDNativeFunctionObject>();
+	ClassDB::register_virtual_class<GDLambdaFunctionObject>();
+	ClassDB::register_virtual_class<GDFunctionState>();
 
 	script_language_gd = memnew(GDScriptLanguage);
 	ScriptServer::register_language(script_language_gd);
